@@ -2,4 +2,4 @@ module example
 
 go 1.18
 
-require golang.org/x/crypto v0.0.0-20220926161630-eccd6366d1be // indirect
+require gopkg.in/yaml.v3 v3.0.0

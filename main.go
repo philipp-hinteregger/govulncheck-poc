@@ -1,11 +1,12 @@
 package main
 
 import (
-  "fmt"
-  "golang.org/x/crypto/md4"
+	"gopkg.in/yaml.v3"
 )
 
 func main() {
-    h := md4.New()
-    fmt.Printf("Random output: %x\n", h.Sum(nil))
+	// https://pkg.go.dev/vuln/GO-2022-0603
+
+	var t interface{}
+	yaml.Unmarshal([]byte("0: [:!00 \xef"), &t)
 }
